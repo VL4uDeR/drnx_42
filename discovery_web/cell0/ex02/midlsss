@@ -1,0 +1,1 @@
+ls -l -A -1 --time-style=long-iso --group-directories-first | grep -vE '^\.[\.]*' | sed 's/ /, /g' | sed 's/$/\//'
