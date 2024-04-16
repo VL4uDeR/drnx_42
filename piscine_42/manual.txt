@@ -1,0 +1,33 @@
+*nano
+*vim
+*touch -t yymmddhhmm
+*mkdir
+*rmdir
+*mv  para mover o renombrar
+*tar -cvf 'comprimir en tar'
+*tar -xpvf 'descomprimir el tar' -p "descomprime sin alterar los permisos"
+*tar -tvf 'listar los archivos del tar'
+*echo > para imprimir dentro de un archivo
+*printf > para imprimir dentro de un archivo sin agregar salto de linea
+
+
+			git status
+			git add
+			git commit -m ""
+			git push
+			git log
+
+*groups  'The groups utility displays the groups to which you (or the optionally spec-
+     ified user) belong'
+*tr -- translate characters ej  tr ' ' ','			
+
+*find	type -f	regular file			-name ""
+			 -d	directory
+			 -l	symbolic link
+			 -b block special
+			 -c character special
+			 -p FIFO
+			 -s socket
+ -exec     \;
+
+*which $SHELL
