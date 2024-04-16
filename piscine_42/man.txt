@@ -11,11 +11,15 @@
 *printf > para imprimir dentro de un archivo sin agregar salto de linea
 
 
-			git status
+			git status -s
 			git add
+			git diff --staged
 			git commit -m ""
 			git push
-			git log
+			git log -oneline
+			git checkout -b (rama nueva)
+			git checkout -d o -D (rama a eliminar)
+
 
 *groups  'The groups utility displays the groups to which you (or the optionally spec-
      ified user) belong'
