@@ -16,7 +16,7 @@
 			git diff --staged
 			git commit -m ""
 			git push
-			git log -oneline
+			git log --oneline
 			git checkout -b (rama nueva)
 			git checkout -d o -D (rama a eliminar)
 
