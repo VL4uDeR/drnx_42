@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdlib.h>
 
 void	ft_putchar(char c)
 {
@@ -21,9 +22,10 @@ void	ft_putnbr(int nb)
 	write(1, &n, 1);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	ft_putnbr(-12345);
+	if (argc == 2)
+		ft_putnbr(atoi(argv[1]));
 	write(1, "\n", 1);
 	return (0);
 }
