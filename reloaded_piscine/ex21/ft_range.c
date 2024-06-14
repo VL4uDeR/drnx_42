@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: darsalga <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 19:19:22 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/13 21:20:29 by darsalga         ###   ########.fr       */
+/*   Created: 2024/06/14 13:07:34 by darsalga          #+#    #+#             */
+/*   Updated: 2024/06/14 14:24:52 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,13 @@ int	*ft_range(int min, int max)
 int	main(void)
 {
 	int	*range;
+	int	min;
+	int	max;
 
-	range = ft_range(1, 10);
-	for (int i = 0; i < 9; i++)
+	min = 1;
+	max = 20;
+	range = ft_range(min, max);
+	for (int i = 0; i < (max - min); i++)
 	{
 		printf("n_bet[%d]: %d\n", i, range[i]);
 	}

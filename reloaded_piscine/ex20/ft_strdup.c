@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: darsalga <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 19:11:18 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/13 03:03:56 by darsalga         ###   ########.fr       */
+/*   Created: 2024/06/14 13:03:21 by darsalga          #+#    #+#             */
+/*   Updated: 2024/06/14 13:07:04 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ char	*ft_strdup(char *src)
 		return (NULL);
 	return (ft_strcpy(dest, src));
 }
-
+/*
 int	main(void)
 {
 	char	*saludo;
 	char	*mirror;
 
-	saludo = "holaMundo";
+	saludo = "42_Barcelona!";
 	mirror = ft_strdup(saludo);
 	if (mirror == NULL)
 	{
@@ -66,3 +66,4 @@ int	main(void)
 	free(mirror);
 	return (0);
 }
+*/
