@@ -16,9 +16,15 @@
 			git diff --staged
 			git commit -m ""
 			git push
-			git log --oneline
+			git log --oneline --graph --stat
 			git checkout -b (rama nueva)
 			git checkout -d o -D (rama a eliminar)
+			git remote add <nombre> <url>
+		example git remote add origin https://github.com/tu_usuario/mi_proyecto.git
+			git push --set-upstream origin master
+
+
+
 
 
 *groups  'The groups utility displays the groups to which you (or the optionally spec-
