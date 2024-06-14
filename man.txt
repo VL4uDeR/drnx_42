@@ -35,3 +35,17 @@
  -exec     \;
 
 *which $SHELL
+
+Comandos de Navegación vim:
+
+    h, j, k, l: Navega a la izquierda, abajo, arriba y derecha, respectivamente.
+    G: Va a la última línea del archivo.
+    gg: Va a la primera línea del archivo.
+    $: Va al final de la línea.
+    0: Va al inicio de la línea.
+    
+    w: Salta al inicio de la siguiente palabra.
+    b: Retrocede al inicio de la palabra anterior.
+    e: Salta al final de la palabra actual.
+
+
