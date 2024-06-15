@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 20:47:11 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/15 01:40:09 by darsalga         ###   ########.fr       */
+/*   Created: 2024/06/08 01:04:26 by darsalga          #+#    #+#             */
+/*   Updated: 2024/06/08 01:11:15 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_strlen(char *str)
 {
-	int	fact;
+	int	len;
 
-	fact = 1;
-	if (nb < 0)
-		return (0);
-	if (nb == 0 || nb == 1)
-		return (1);
-	while (nb > 1)
+	len = 0;
+	while (*str != '\0')
 	{
-		fact = fact * nb;
-		nb--;
+		str++;
+		len++;
 	}
-	return (fact);
+	return (len);
 }

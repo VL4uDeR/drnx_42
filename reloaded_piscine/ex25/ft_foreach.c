@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/07 20:47:11 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/15 01:40:09 by darsalga         ###   ########.fr       */
+/*   Created: 2024/06/14 21:14:25 by darsalga          #+#    #+#             */
+/*   Updated: 2024/06/14 23:08:35 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+#include <stdio.h>
 
-int	ft_iterative_factorial(int nb)
+void	ft_putnbr(int nbr);
+void	ft_foreach(int *tab, int length, void (*f)(int));
+
+int	main(void)
 {
-	int	fact;
+	int	n[19];
 
-	fact = 1;
-	if (nb < 0)
-		return (0);
-	if (nb == 0 || nb == 1)
-		return (1);
-	while (nb > 1)
+	for (int i = 0; i < 21; i++)
+		n[i] = i;
+	ft_foreach(n, 21, ft_putnbr);
+	return (0);
+}
+
+void	ft_putnbr(int nbr)
+{
+	printf("%d\n", nbr);
+}
+*/
+void	ft_foreach(int *tab, int length, void (*f)(int))
+{
+	int	i;
+
+	i = 0;
+	while (i < length)
 	{
-		fact = fact * nb;
-		nb--;
+		f(tab[i]);
+		i++;
 	}
-	return (fact);
 }
