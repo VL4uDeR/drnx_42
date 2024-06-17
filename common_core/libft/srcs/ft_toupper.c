@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 02:42:10 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/17 18:52:55 by darsalga         ###   ########.fr       */
+/*   Created: 2024/06/17 21:28:18 by darsalga          #+#    #+#             */
+/*   Updated: 2024/06/17 21:46:27 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+int	ft_toupper(int c)
 {
-	return ((uc >= 'a' && uc <= 'z')
-		|| (uc >= 'A' && uc <= 'Z')
-		|| (uc >= '0' && uc <= '9'));
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

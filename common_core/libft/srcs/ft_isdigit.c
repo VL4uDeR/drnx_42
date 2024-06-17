@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 02:42:10 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/17 18:52:55 by darsalga         ###   ########.fr       */
+/*   Created: 2024/06/17 00:24:26 by darsalga          #+#    #+#             */
+/*   Updated: 2024/06/17 00:38:07 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+int	ft_isdigit(int c)
 {
-	return ((uc >= 'a' && uc <= 'z')
-		|| (uc >= 'A' && uc <= 'Z')
-		|| (uc >= '0' && uc <= '9'));
+	return (c >= '0' && c <= '9');
 }

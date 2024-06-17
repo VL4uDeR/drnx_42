@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 02:42:10 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/17 18:52:55 by darsalga         ###   ########.fr       */
+/*   Created: 2024/06/17 19:13:43 by darsalga          #+#    #+#             */
+/*   Updated: 2024/06/17 19:20:03 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+int	ft_isascii(int c)
 {
-	return ((uc >= 'a' && uc <= 'z')
-		|| (uc >= 'A' && uc <= 'Z')
-		|| (uc >= '0' && uc <= '9'));
+	return (c >= 0 && c <= 127);
 }
