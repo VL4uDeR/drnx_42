@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 17:26:24 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/18 20:34:09 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/19 16:56:22 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -36,10 +36,10 @@ int	main(void)
 {
 	char	*slds = "42 es la respuesta!";
 	char	cpy[12];
-	short	size = sizeof(cpy);
-	short	rtrn = ft_strlcpy(cpy, slds, size);
-
-	printf("str src: %s\nstr cpy: %s\nlen src = '%d'\nsize = '%d'\n",
+	int		size = sizeof(cpy);
+	int		rtrn = ft_strlcpy(cpy, slds, size);
+	
+	printf("str src: %s\nstr cpy: %s\nsrc_len = '%d'\nbuffer_size = '%d'\n",
 		slds, cpy, rtrn, size);
 	return (0);
 }

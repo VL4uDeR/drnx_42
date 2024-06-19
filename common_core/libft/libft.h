@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 21:03:04 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/18 23:52:46 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:01:52 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	ft_tolower(int c);
 int	ft_strlen(char *str);
 unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int size);
 unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size);
+char	*ft_strchr(const char *str, int c);
 
 #endif
