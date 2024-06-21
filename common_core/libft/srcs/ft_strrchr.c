@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 20:35:29 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/21 00:01:45 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/21 02:31:44 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_strrchr(const char *str, int c)
 			count1++;
 		i++;
 	}
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] == (char)c)
@@ -38,7 +39,7 @@ char	*ft_strrchr(const char *str, int c)
 		}
 		i++;
 	}
-	if (str[i] && ((char)c == '\0'))
+	if (str[i] == '\0' && ((char)c == '\0'))
 		return ((char *)&str[i]);
 	return (NULL);
 }
@@ -48,8 +49,8 @@ int	main(void)
 	char	*sld;
 	int		c;
 
-	sld = "42 es la ResRpuesta!";
-	c = 'R';
+	sld = "42 Res lRa ResRpuResta!";
+	c = 'e';
 	printf("%s\n", ft_strrchr(sld, c));
 	printf("%s\n", strrchr(sld, c));
 	return (0);
