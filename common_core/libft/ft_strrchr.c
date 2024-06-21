@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 20:35:29 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/21 02:31:44 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/21 14:08:47 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(void)
 	int		c;
 
 	sld = "42 Res lRa ResRpuResta!";
-	c = 'e';
+	c = 's';
 	printf("%s\n", ft_strrchr(sld, c));
 	printf("%s\n", strrchr(sld, c));
 	return (0);
