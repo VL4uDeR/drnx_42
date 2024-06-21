@@ -1,4 +1,29 @@
-**/.DS_Store
-**/a.out
-**/*.exe
+# Vim swap files
+*.swp
+*.swo
+
+# Vim backup files
+*.bak
+*.tmp
+*.temp
+*.orig
+
+# compilation files
+
+*.o
+*.a
+*.out
+*.exe
+*.gch
 **/run
+*_ft_main.c
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# +temp files
+*.log
+*.cache
+*.old
+*.backup
