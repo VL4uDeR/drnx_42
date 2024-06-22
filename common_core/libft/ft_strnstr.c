@@ -1,43 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 17:03:18 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/21 23:43:32 by darsalga         ###   ########.fr       */
+/*   Created: 2024/06/22 00:27:21 by darsalga          #+#    #+#             */
+/*   Updated: 2024/06/22 02:00:47 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
+	size_t	i;
+	size_t	x;
 
 	i = 0;
-	while (str[i])
+	if (little[i] == 0)
+		return ((char *)big);
+	while (big[i] && i < len)
 	{
-		if (str[i] == (char)c)
-			return ((char *)&str[i]);
+		x = 0;
+		while (big[i + x] == little[x] && big[i + x] && (i + x) < len)
+		{
+			x++;
+			if (little[x] == '\0')
+				return ((char *)&big[i]);
+		}
 		i++;
 	}
-	if (str[i] == (char)c)
-		return ((char *)&str[i]);
 	return (NULL);
 }
-/*
+
 int	main(void)
 {
-	char	*sld;
-	int		c;
+	char	*s1 = "holaMundo";
+	char	*s2 = "Mu";
+	size_t	max = 6;
+	char	*i1 = ft_strnstr(s1, s2, max);
 
-	sld = "42 es la Respuesta ahRRRg!";
-	c = 'R';
-	printf("str original : %s\n", sld);
-	printf("%s\n", ft_strchr(sld, c));
-	printf("%s\n", strchr(sld, c));
+	printf("strnstr: %s\n", i1);
 	return (0);
 }
-*/

@@ -6,16 +6,17 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:50:55 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/19 16:56:54 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/21 23:22:59 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	dst_len;
-	unsigned int	src_len;
+	size_t	i;
+	size_t	dst_len;
+	size_t	src_len;
 
 	i = 0;
 	dst_len = 0;
@@ -37,13 +38,13 @@ unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
 /*
 int	main(void)
 {
-	char	slds[25] = "42!";
-	char	*cpy = " es la respuesta!";
-	short	size = sizeof(slds);
-	short	rtrn = ft_strlcat(slds, cpy, size);
+	char	dst[30] = "42!";
+	char	*src = " es la respuesta!";
+	int		size = sizeof(dst);
+	int		rtrn = ft_strlcat(dst, src, size);
 
-	printf("str src: %s\nstr dst: %s\nlen src = '%d'\nbuffer_size = '%d'\n",
-		cpy, slds, rtrn, size);
+	printf("str src: %s\nstr dst: %s\n", src, dst);
+	printf("len dst = '%d'\nbuffer_size = '%d'\n", rtrn, size);
 	return (0);
 }
 */
