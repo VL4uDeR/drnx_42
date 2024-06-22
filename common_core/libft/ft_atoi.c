@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 00:45:45 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/23 01:47:24 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/23 01:51:07 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@ int	ft_atoi(const char *nptr)
 		return (-nbr);
 	return (nbr);
 }
-
+/*
 int	main(void)
 {
 	char	*nbrstr;
 
-	nbrstr = "762267";
+	nbrstr = "7621267";
 	printf("%d\n", ft_atoi(nbrstr));
 	return (0);
 }
+*/

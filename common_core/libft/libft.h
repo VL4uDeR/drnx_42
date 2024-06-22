@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 21:03:04 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/21 23:26:54 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/23 01:50:15 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	ft_atoi(const char *nptr);
 
 #endif
