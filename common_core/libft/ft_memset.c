@@ -21,3 +21,14 @@ void	*ft_memset(void *b, int c, size_t len)
 		*tmp++ = (unsigned char)c;
 	return (b);
 }
+
+int	main(void)
+{
+	char buffer[20];
+
+	ft_memset(buffer, '\0', sizeof(buffer));
+	printf("buffer: %s\n", buffer);
+	ft_memset(buffer, 'F', sizeof(buffer) - 1)
+	printf("buffer: %s\n", buffer);
+	return (0);
+}
