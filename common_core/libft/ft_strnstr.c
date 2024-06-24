@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 00:27:21 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/22 04:08:21 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/24 17:19:20 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /*
 int	main(void)
 {
-	char	*s1 = "holaMundo";
-	char	*s2 = "Mund";
-	size_t	max = 6;
-	char	*i1 = ft_strnstr(s1, s2, max);
+	char	*s1 = "42 es la respuesta!";
+	char	*s2 = "resp";
+	size_t	max = 15;
+	char	*find = ft_strnstr(s1, s2, max);
 
-	printf("strnstr: %s\n", i1);
+	printf("find s2: '%s', inside s1: '%s'\n%zu characters max\n", s2, s1, max);
+	sleep (2);
+	if (find == NULL)
+		printf ("str not found u.u\n");
+	else
+		printf("str found n.n : %s\n", find);
 	return (0);
 }
 */

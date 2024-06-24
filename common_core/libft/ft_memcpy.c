@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 13:24:40 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/24 13:39:14 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/24 17:40:59 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,17 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		*pdst++ = *psrc++;
 	return (dst);
 }
-
+/*
 int	main(void)
 {
 	char	*sld;
 	char	copia[20];
 
 	sld = "42 es la respuesta!!!";
-	printf("before memcpy: %s\n", copia);
+	printf("src str: %p: %s\n", &sld, sld);
+	printf("before memcpy: %p: %s\n", &copia, copia);
 	ft_memcpy(copia, sld, strlen(sld) + 1);
-	printf("after memcpy: %s\n", copia);
+	printf("after memcpy: %p: %s\n", &copia, copia);
 	return (0);
 }
+*/

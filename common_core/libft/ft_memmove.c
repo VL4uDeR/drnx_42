@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 22:11:37 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/24 18:49:27 by darsalga         ###   ########.fr       */
+/*   Created: 2024/06/24 23:18:10 by darsalga          #+#    #+#             */
+/*   Updated: 2024/06/25 00:01:47 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
-}
-/*
-int	main(void)
-{
-	int	letter;
+	size_t			i;
+	unsigned char	*tmp;
+	unsigned char	*p_dst;
+	unsigned char	*p_src;
+	
+	if (dest == NULL && src == NULL)
+		return (dst);
 
-	letter = 'Z';
-	printf("%d\n", ft_tolower(letter));
-	printf("%d\n", tolower(letter));
-	return (0);
+	i = 0;
+	tmp = 0;
+	p_dst == (unsigned char *)dst;
+	P_src == (unsigned char *)src;
+	while (src[i] && i < n)
+	{
+		*tmp = *p_src;
+		*p_dst = *tmp;
+	}
 }
-*/

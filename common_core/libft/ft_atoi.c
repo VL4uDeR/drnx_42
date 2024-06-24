@@ -6,44 +6,51 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 00:45:45 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/23 01:51:07 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/24 21:37:37 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_isspace(int c)
+{
+	if (c == ' ' || c == '\f'
+		|| c == '\n' || c == '\r'
+		|| c == '\t' || c == '\v')
+		return (1);
+	return (0);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int	nbr;
-	int	minuscount;
+	int	sign;
 
 	nbr = 0;
-	minuscount = 0;
-	while (*nptr)
+	sign = 1;
+	while (ft_isspace(*nptr))
+		nptr++;
+	if (*nptr == '+' || *nptr == '-')
 	{
-		if (*nptr == '-' || *nptr == '+')
-		{
-			if (*nptr == '-')
-				minuscount++;
-			nptr++;
-		}
-		if (*nptr >= '0' && *nptr <= '9')
-		{
-			nbr = nbr * 10 + (*nptr - '0');
-			nptr++;
-		}
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
 	}
-	if ((minuscount % 2) != 0)
-		return (-nbr);
-	return (nbr);
+	while (*nptr && *nptr >= '0' && *nptr <= '9')
+	{
+		nbr = nbr * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (nbr * sign);
 }
 /*
 int	main(void)
 {
 	char	*nbrstr;
 
-	nbrstr = "7621267";
+	nbrstr = "		-00726   ";
 	printf("%d\n", ft_atoi(nbrstr));
+	printf("%d\n", atoi(nbrstr));
 	return (0);
 }
 */
