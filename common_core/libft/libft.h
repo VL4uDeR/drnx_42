@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 21:03:04 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/24 18:54:53 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/26 05:45:55 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_atoi(const char *nptr);
 void		*ft_memset(void *b, int c, size_t len);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
+void		*ft_memmove(void *dst, const void *src, size_t n);
+void		*ft_memchr(const void *s, int c, size_t n);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
+void		ft_bzero(void *s, size_t n);
 
 #endif

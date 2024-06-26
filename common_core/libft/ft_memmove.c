@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 23:18:10 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/25 02:33:35 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/26 01:12:58 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,41 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	tmp[20];
-	unsigned char	*p_dst;
-	unsigned char	*p_src;
+	size_t				i;
+	unsigned char		*p_dst;
+	const unsigned char	*p_src;
 
 	if (dst == NULL && src == NULL)
-		return (dst);
+		return (NULL);
 	i = 0;
-	tmp[20] = 0;
 	p_dst = (unsigned char *)dst;
-	p_src = (unsigned char *)src;
-	while (((const char *)src)[i] && i < n)
+	p_src = (const unsigned char *)src;
+	if (p_dst > p_src)
+		while (n-- > 0)
+			p_dst[n] = p_src[n];
+	else
 	{
-		tmp[i] = p_src[i];
-		p_dst[i] = tmp[i];
-		i++;
+		while (i < n)
+		{
+			p_dst[i] = p_src[i];
+			i++;
+		}
 	}
-	return ((unsigned char *)dst);
+	return (dst);
 }
 /*
 int	main(void)
 {
-	char	*sld = "42 Barcelona";
-	char	buffer[20] = "holaMundo!";
+	int		n = 30;
+	char	*sld = "42 Barcelona es la respuesta";
+	char	buffer[n];
 
 	printf("address src (%p): %s\n", sld, sld);
 	printf("address dst (%p): %s\n", buffer, buffer);
-	ft_memmove(buffer, sld, 12);
-	printf("address dst (%p): %s\n", buffer, buffer);
+	ft_memmove(buffer, sld, n);
+	printf("(ft)address dst (%p): %s\n", buffer, buffer);
+	memmove(buffer, sld, n);
+	printf("(og)address dst (%p): %s\n", buffer, buffer);
 	return (0);
 }
 */
