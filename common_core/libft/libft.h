@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 21:03:04 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/27 00:32:28 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/27 05:35:29 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strdup(const char *s);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
 
 #endif
