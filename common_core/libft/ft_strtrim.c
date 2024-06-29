@@ -6,14 +6,11 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 19:05:19 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/29 02:00:04 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/29 17:49:43 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//size_t	ft_strlen(const char *s);
-//size_t	strlcpy(char *dst, const char *src, size_t size);
 
 static size_t	in_set(char c, const char *set)
 {
@@ -48,17 +45,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(rtn, dup, tail + 1);
 	return (rtn);
 }
-
+/*
 int	main(void)
 {
 	char	*slds;
 	char	*sld;
 	char	*trimed;
 
-	slds = "afa fs d42_Barcelona!a dsa faf";
+	slds = "afa fs d 42_Barcelona ! a dsa faf";
 	sld = " asdf";
 	trimed = ft_strtrim(slds, sld);
 	printf("%p\t%s\n", trimed, trimed);
 	free(trimed);
 	return (0);
 }
+*/

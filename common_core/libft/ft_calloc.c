@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 17:59:18 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/26 20:26:56 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/06/29 17:44:56 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	p = malloc(nmemb * size);
 	if (!(p))
 		return (NULL);
-	while (i < (nmemb * size) && p[i])
+	while (i < (nmemb * size))
 	{
-		p[i] = 0;
+		((char *)p)[i] = 0;
 		i++;
 	}
 	return ((void *)p);
