@@ -6,11 +6,13 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 17:59:18 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/29 17:44:56 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/02 19:49:07 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
+#include <stddef.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

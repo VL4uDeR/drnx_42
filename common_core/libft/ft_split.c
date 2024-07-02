@@ -6,13 +6,14 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 21:34:52 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/29 17:49:00 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/02 21:33:18 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h> // free
 
-static size_t	words_count(char const *s, char c)
+static size_t	count_strs(char const *s, char c)
 {
 	size_t	flag;
 	size_t	count;
@@ -33,6 +34,30 @@ static size_t	words_count(char const *s, char c)
 	return (count);
 }
 
+static void	ft_free(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
+char	*assign_strs(char **pack, char const *s, size_t sp, size_t len)
+{
+	*pack = ft_substr(s, sp, len);
+	if (!*pack)
+	{
+		ft_free(pack);
+		return (NULL);
+	}
+	return (*pack);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -42,7 +67,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	x = 0;
-	pack = ft_calloc(words_count(s, c) + 1, sizeof(char *));
+	pack = ft_calloc(count_strs(s, c) + 1, sizeof(char *));
 	if (!pack)
 		return (NULL);
 	while (s[i])
@@ -54,25 +79,12 @@ char	**ft_split(char const *s, char c)
 			i++;
 		if (i > j)
 		{
-			pack[x] = ft_calloc(i - j + 1, sizeof(char));
-			ft_strlcpy(pack[x], s + j, i - j + 1);
+			if (!(assign_strs(&pack[x], s, j, i - j)))
+				return (NULL);
 			x++;
 		}
 	}
 	return (pack);
-}
-
-void	ft_free(char **split)
-{
-	int	i;
-
-	i = 0;
-	while (split[i])
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
 }
 /*
 int	main(int ac, char **av)

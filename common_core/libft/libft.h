@@ -6,18 +6,18 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 21:03:04 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/29 14:20:49 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/02 23:48:34 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
-# include <unistd.h>
-# include <string.h>
-# include <ctype.h>
-# include <stdlib.h>
+//# include <stdio.h>
+//# include <unistd.h>
+//# include <string.h>
+//# include <ctype.h>
+//# include <stdlib.h>
 # include <stddef.h>
 
 int			ft_isalpha(int c);
@@ -47,5 +47,6 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
+char		*ft_itoa(int n);
 
 #endif
