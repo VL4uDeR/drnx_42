@@ -6,12 +6,13 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 21:34:52 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/02 21:33:18 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/03 03:06:31 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h> // free
+#include <stdio.h>
 
 static size_t	count_strs(char const *s, char c)
 {
@@ -100,9 +101,10 @@ int	main(int ac, char **av)
 	op1 = w_sld;
 	if (ac == 1)
 	{
+		printf("STR ORIGNAL = %s\n", sld);
 		while (*w_sld)
 		{
-			printf("%s\n", *w_sld);
+			printf("%p:%s\n", *w_sld, *w_sld);
 			w_sld++;
 		}
 		ft_free(op1);
