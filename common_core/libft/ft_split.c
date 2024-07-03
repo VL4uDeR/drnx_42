@@ -6,18 +6,17 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 21:34:52 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/03 03:06:31 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/03 22:44:22 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h> // free
-#include <stdio.h>
+#include <stdlib.h>
 
 static size_t	count_strs(char const *s, char c)
 {
-	size_t	flag;
-	size_t	count;
+	int	flag;
+	int	count;
 
 	flag = 0;
 	count = 0;
@@ -48,7 +47,7 @@ static void	ft_free(char **split)
 	free(split);
 }
 
-char	*assign_strs(char **pack, char const *s, size_t sp, size_t len)
+static char	*assign_strs(char **pack, char const *s, int sp, int len)
 {
 	*pack = ft_substr(s, sp, len);
 	if (!*pack)
@@ -61,9 +60,9 @@ char	*assign_strs(char **pack, char const *s, size_t sp, size_t len)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	x;
+	int		i;
+	int		j;
+	int		x;
 	char	**pack;
 
 	i = 0;
@@ -101,10 +100,10 @@ int	main(int ac, char **av)
 	op1 = w_sld;
 	if (ac == 1)
 	{
-		printf("STR ORIGNAL = %s\n", sld);
+		printf("ORIGINAL STR = %s\n", sld);
 		while (*w_sld)
 		{
-			printf("%p:%s\n", *w_sld, *w_sld);
+			printf("%p: %s\n", (void *)w_sld, *w_sld);
 			w_sld++;
 		}
 		ft_free(op1);
@@ -115,7 +114,7 @@ int	main(int ac, char **av)
 		op2 = input;
 		while (*input)
 		{
-			printf("%s\n", *input);
+			printf("%p: %s\n", (void *)input, *input);
 			input++;
 		}
 		ft_free(op2);

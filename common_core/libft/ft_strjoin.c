@@ -6,11 +6,12 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 04:08:00 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/27 05:34:23 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/03 22:48:08 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static size_t	getlen(char const *s)
 {

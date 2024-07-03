@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/21 20:19:47 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/03 23:05:21 by darsalga         ###   ########.fr       */
+/*   Created: 2024/07/03 18:43:38 by darsalga          #+#    #+#             */
+/*   Updated: 2024/07/03 19:40:51 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] && s1[i] == s2[i] && i < (n - 1))
+	if (!s)
+		return ;
+	while (s[i])
 	{
+		f(i, &s[i]);
 		i++;
 	}
-	return (((unsigned char)s1[i] - (unsigned char)s2[i]));
 }
 /*
-int	main(void)
+void	print_char(unsigned int index, char *c)
 {
-	char	*sld1;
-	char	*sld2;
-	size_t		n;
+	printf("Index: %u, Char: %c\n", index, *c);
+}
 
-	sld1 = "42 es la respuesta";
-	sld2 = "42 es la respuestA";
-	n = 25 ;
-	printf("s1: %s\ns2: %s\n", sld1, sld2);
-	printf("%d\n", ft_strncmp(sld1, sld2, n));
-	printf("%d\n", strncmp(sld1, sld2, n));
+int main()
+{
+	char *sld;
+
+	sld = "42_Barcelona!";
+	ft_striteri(sld, print_char);
 	return (0);
 }
 */

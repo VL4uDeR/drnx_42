@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/21 20:19:47 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/03 23:05:21 by darsalga         ###   ########.fr       */
+/*   Created: 2024/07/03 20:54:27 by darsalga          #+#    #+#             */
+/*   Updated: 2024/07/03 21:08:53 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	char	*nb;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] && s1[i] == s2[i] && i < (n - 1))
+	nb = ft_itoa(n);
+	while (*nb)
 	{
-		i++;
+		write(fd, &*nb, 1);
+		nb++;
 	}
-	return (((unsigned char)s1[i] - (unsigned char)s2[i]));
 }
 /*
 int	main(void)
 {
-	char	*sld1;
-	char	*sld2;
-	size_t		n;
+	int	n;
 
-	sld1 = "42 es la respuesta";
-	sld2 = "42 es la respuestA";
-	n = 25 ;
-	printf("s1: %s\ns2: %s\n", sld1, sld2);
-	printf("%d\n", ft_strncmp(sld1, sld2, n));
-	printf("%d\n", strncmp(sld1, sld2, n));
+	n = -2147483647;
+	ft_putnbr_fd(n, 1);
 	return (0);
 }
 */

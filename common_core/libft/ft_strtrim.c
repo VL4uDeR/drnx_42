@@ -6,11 +6,12 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 19:05:19 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/29 17:49:43 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/03 22:49:03 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static size_t	in_set(char c, const char *set)
 {

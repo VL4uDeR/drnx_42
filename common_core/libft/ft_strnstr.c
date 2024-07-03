@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 00:27:21 by darsalga          #+#    #+#             */
-/*   Updated: 2024/06/24 17:19:20 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/03 23:46:10 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	x;
 
 	i = 0;
-	if (little[i] == '\0')
+	if (!big)
+		return (0);
+	if (little[0] == '\0')
 		return ((char *)big);
 	while (big[i] && i < len)
 	{
 		x = 0;
 		while (big[i + x] == little[x] && big[i + x] && (i + x) < len)
 		{
-			x++;
-			if (little[x] == '\0')
+			if (little[x + 1] == '\0')
 				return ((char *)&big[i]);
+			x++;
 		}
 		i++;
 	}
