@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 02:13:23 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/03 18:39:49 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/04 05:58:12 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int		len;
 	char				*dst;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
 	dst = (ft_calloc((len + 1), sizeof(char)));

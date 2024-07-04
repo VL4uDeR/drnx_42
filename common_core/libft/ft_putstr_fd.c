@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 19:53:24 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/03 20:23:37 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/04 06:07:31 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	while (*s)
 	{
 		write(fd, &*s, 1);
