@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:50:55 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/05 12:34:12 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/05 20:29:37 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	src_len;
 
 	if (size == 0)
-		return (0);
+		return (ft_strlen(src));
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	if (size <= dst_len)

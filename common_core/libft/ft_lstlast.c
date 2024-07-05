@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/05 14:34:34 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/05 20:51:03 by darsalga         ###   ########.fr       */
+/*   Created: 2024/07/05 20:49:10 by darsalga          #+#    #+#             */
+/*   Updated: 2024/07/05 20:53:29 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!new)
-		return ;
-	lst[0] = new;
+	int	len;
+
+	len = 0;
+	while (lst)
+		len++;
+	return (lst + len);
 }
