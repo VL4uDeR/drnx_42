@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 21:03:04 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/03 22:14:18 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/05 00:01:52 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define LIBFT_H
 
 # include <stddef.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 //Libc ft
 int			ft_isalpha(int c);
