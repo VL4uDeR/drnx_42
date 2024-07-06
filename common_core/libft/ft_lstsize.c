@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 19:36:02 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/05 20:48:57 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/06 02:17:34 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ int	ft_lstsize(t_list *lst)
 
 	len = 0;
 	while (lst)
+	{
 		len++;
+		lst = lst->next;
+	}
 	return (len);
 }
