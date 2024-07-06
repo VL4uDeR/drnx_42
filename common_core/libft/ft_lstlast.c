@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 20:49:10 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/06 02:27:26 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/06 20:38:42 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst -> next)
-		lst = lst -> next;
-	return (lst);
+	t_list	*last;
+
+	if (!lst)
+		return (NULL);
+	last = lst;
+	while (last -> next != NULL)
+		last = last -> next;
+	return (last);
 }
