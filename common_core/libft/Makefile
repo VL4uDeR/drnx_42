@@ -1,13 +1,17 @@
-NAME = libft
+NAME = libft.a
+
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 		ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
 		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
-		ft_atoi.c ft_calloc.c ft_strdup.c \
-		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
-		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-				ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
+		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
+		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+
+SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+			 ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+			 ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
@@ -19,24 +23,31 @@ RM = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar $(ARFLAGS) $(NAME).a $(OBJS)
+	@echo	"(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ Compilando, espere..."
+	@ar $(ARFLAGS) $(NAME) $(OBJS)
+	@echo	"\n"
+	@echo	"(•̀ᴗ•́)و $(NAME) generado!"
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	ar $(ARFLAGS) $(NAME).a $(OBJS) $(OBJS_BONUS)
+bonus: .bonus
 
-#so:
-#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(OBJS_BONUS)
-#	gcc -nostartfiles -shared -o $(NAME).so $(OBJS) $(OBJS_BONUS)
+.bonus:	$(OBJS_BONUS)
+	@echo	"(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ Compilando _bonus, espere..."
+	@ar $(ARFLAGS) $(NAME) $(OBJS_BONUS)
+	@echo	"\n"
+	@touch .bonus
+	@echo	"(•̀ᴗ•́)و _bonus generados!"
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(OBJS) $(OBJS_BONUS)
+	@echo	"¯\_(ツ)_/¯ Objects removidos!"
 
 fclean: clean
-	$(RM) $(NAME).a $(NAME).so
+	@$(RM) $(NAME) .bonus
+	@echo	"(╯°□°）╯︵ ┻━┻ $(NAME) removido!"
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re bonus
