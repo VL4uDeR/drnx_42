@@ -6,9 +6,12 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:31 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/12 03:00:39 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/14 06:56:33 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# ifndef
+# define
 
 # ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1024
@@ -30,6 +33,49 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	ft_bzero(p, total);
 	return (p);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	size_t	i;
+	size_t	x;
+	char	*dst;
+
+	if (!s1 || !s2)
+		return (0);
+	i = 0;
+	x = 0;
+	dst = malloc (sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!dst)
+		return (NULL);
+	while (s1[i])
+	{
+		dst[i] = s1[i];
+		i++;
+	}
+	while (s2[x])
+	{
+		dst[i + x] = s2[x];
+		x++;
+	}
+	dst[i + x] = '\0';
+	return (dst);
+}
+
+char	*ft_strchr(const char *str, int c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
+		i++;
+	}
+	if (str[i] == (char)c)
+		return ((char *)&str[i]);
+	return (NULL);
 }
 
 #endif
