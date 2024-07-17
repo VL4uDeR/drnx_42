@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef
-# define
+# ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1024
@@ -76,6 +76,20 @@ char	*ft_strchr(const char *str, int c)
 	if (str[i] == (char)c)
 		return ((char *)&str[i]);
 	return (NULL);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	*p;
+
+	i = '\0';
+	p = (char *)s;
+	while (i < n)
+	{
+		p[i] = 0;
+		i++;
+	}
 }
 
 #endif
