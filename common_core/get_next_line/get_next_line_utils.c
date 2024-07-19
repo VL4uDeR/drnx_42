@@ -10,13 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-
-# ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1024
-
-#include <stdlib.h>
+#include "get_netx_line.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -91,5 +85,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-#endif
