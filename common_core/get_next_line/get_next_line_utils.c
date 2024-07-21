@@ -6,11 +6,11 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:31 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/14 06:56:33 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/21 05:19:36 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_netx_line.h"
+#include "get_next_line.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -84,4 +84,14 @@ void	ft_bzero(void *s, size_t n)
 		p[i] = 0;
 		i++;
 	}
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }
