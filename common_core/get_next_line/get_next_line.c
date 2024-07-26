@@ -6,14 +6,14 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:11 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/24 06:23:17 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/26 06:27:30 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <unistd.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, char *src, size_t size)
 {
 	size_t	i;
 	size_t	len;
@@ -40,7 +40,7 @@ char	*get_line(char *fd_stash)
 	char		*line;
 
 	i = 0;
-	if (!fd_stash)
+	if (!fd_stash[i])
 		return (NULL);
 	while (fd_stash[i] && fd_stash[i] != '\n')
 		i++;
@@ -59,17 +59,25 @@ char	*get_cleanup(char *fd_stash)
 	char	*ini_pos;
 	char	*new_stash;
 
+	if (!fd_stash)
+		return (NULL);
 	i = 0;
 	ini_pos = ft_strchr(fd_stash, '\n');
 	if (!ini_pos)
+	{
+		free(fd_stash);
 		return (NULL);
+	}
 	ini_pos++;
 	while (ini_pos[i])
 		i++;
 	new_stash = ft_calloc((i + 1), sizeof(char));
 	if (!new_stash)
+	{
+		free(fd_stash);
 		return (NULL);
-	ft_strlcpy(new_stash, ini_pos, (i + 1));
+	}
+	ft_strlcpy(new_stash, ini_pos, i + 1);
 	free(fd_stash);
 	return (new_stash);
 }
@@ -79,10 +87,12 @@ char	*read_fd(int fd, char *fd_stash)
 	int		rd_bytes;
 	char	*buf;
 
-	rd_bytes = 1;
+	if (!fd)
+		return (NULL);
 	buf = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (!buf)
 		return (NULL);
+	rd_bytes = 1;
 	while (!ft_strchr(fd_stash, '\n') && rd_bytes != 0)
 	{
 		rd_bytes = read(fd, buf, BUFFER_SIZE);
@@ -91,6 +101,7 @@ char	*read_fd(int fd, char *fd_stash)
 			free(buf);
 			return (NULL);
 		}
+		buf[rd_bytes] = '\0';
 		fd_stash = ft_strjoin(fd_stash, buf);
 	}
 	free(buf);
@@ -103,18 +114,11 @@ char	*get_next_line(int fd)
 	static char	*fd_stash;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
+		return (0);
 	fd_stash = read_fd(fd, fd_stash);
 	if (!fd_stash)
 		return (NULL);
 	next_line = get_line(fd_stash);
-	if (!next_line)
-	{
-		free(fd_stash);
-		return (NULL);
-	}
 	fd_stash = get_cleanup(fd_stash);
-	if (!fd_stash)
-		return (NULL);
 	return (next_line);
 }

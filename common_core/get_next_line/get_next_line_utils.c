@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:31 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/21 05:19:36 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/26 06:42:02 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,19 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (p);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	x;
 	char	*dst;
 
+	if (!s1)
+		s1 = ft_calloc(1, sizeof(char));
 	if (!s1 || !s2)
-		return (0);
+		return (NULL);
 	i = 0;
 	x = 0;
-	dst = malloc (sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	dst = ft_calloc(((ft_strlen(s1) + ft_strlen(s2)) + 1), sizeof(char));
 	if (!dst)
 		return (NULL);
 	while (s1[i])
@@ -52,14 +54,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		dst[i + x] = s2[x];
 		x++;
 	}
-	dst[i + x] = '\0';
+	free(s1);
 	return (dst);
 }
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(char *str, int c)
 {
 	int	i;
 
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i])
 	{
@@ -69,7 +73,7 @@ char	*ft_strchr(const char *str, int c)
 	}
 	if (str[i] == (char)c)
 		return ((char *)&str[i]);
-	return (NULL);
+	return (0);
 }
 
 void	ft_bzero(void *s, size_t n)
@@ -90,6 +94,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
+	if (!s)
+		return (0);
 	len = 0;
 	while (s[len])
 		len++;
