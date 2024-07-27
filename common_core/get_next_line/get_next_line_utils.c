@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:31 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/27 04:35:59 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/27 04:51:25 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	while (i < total)
 	{
-		((char*)p)[i] = 0;
+		((char *)p)[i] = 0;
 		i++;
 	}
 	return (p);
