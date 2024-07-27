@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 05:17:45 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/27 05:18:04 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/27 23:09:33 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,14 @@ char	*read_fd(int fd, char *fd_stash)
 char	*get_next_line(int fd)
 {
 	char		*next_line;
-	static char	*fd_stash;
+	static char	*fd_stash[1024];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	fd_stash = read_fd(fd, fd_stash);
-	if (!fd_stash)
+	fd_stash[fd] = read_fd(fd, fd_stash[fd]);
+	if (!fd_stash[fd])
 		return (NULL);
-	next_line = get_line(fd_stash);
-	fd_stash = get_cleanup(fd_stash);
+	next_line = get_line(fd_stash[fd]);
+	fd_stash[fd] = get_cleanup(fd_stash[fd]);
 	return (next_line);
 }
