@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:52 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/26 06:29:46 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/27 05:07:14 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
+#  define BUFFER_SIZE 21
 # endif
 
 char	*get_next_line(int fd);
