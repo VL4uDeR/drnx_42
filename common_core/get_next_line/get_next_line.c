@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:11 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/26 06:27:30 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/27 02:19:20 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,6 @@ char	*read_fd(int fd, char *fd_stash)
 	int		rd_bytes;
 	char	*buf;
 
-	if (!fd)
-		return (NULL);
 	buf = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (!buf)
 		return (NULL);

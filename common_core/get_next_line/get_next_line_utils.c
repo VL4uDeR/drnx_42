@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:31 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/26 06:42:02 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/27 03:45:01 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if ((total / nmemb) != size)
 		return (NULL);
 	p = malloc(total);
-	if (!(p))
+	if (!p)
 		return (NULL);
 	ft_bzero(p, total);
 	return (p);
