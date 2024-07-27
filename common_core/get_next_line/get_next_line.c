@@ -6,52 +6,12 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:11 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/27 02:19:20 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/27 04:39:58 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <unistd.h>
-
-size_t	ft_strlcpy(char *dst, char *src, size_t size)
-{
-	size_t	i;
-	size_t	len;
-
-	i = 0;
-	len = 0;
-	while (src[len])
-		len++;
-	if (size > 0)
-	{
-		while (src[i] && i < (size - 1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	return (len);
-}
-
-char	*get_line(char *fd_stash)
-{
-	size_t		i;
-	char		*line;
-
-	i = 0;
-	if (!fd_stash[i])
-		return (NULL);
-	while (fd_stash[i] && fd_stash[i] != '\n')
-		i++;
-	if (fd_stash[i] == '\n')
-		i++;
-	line = ft_calloc((i + 1), sizeof(char));
-	if (!line)
-		return (NULL);
-	ft_strlcpy(line, fd_stash, (i + 1));
-	return (line);
-}
 
 char	*get_cleanup(char *fd_stash)
 {
@@ -77,9 +37,28 @@ char	*get_cleanup(char *fd_stash)
 		free(fd_stash);
 		return (NULL);
 	}
-	ft_strlcpy(new_stash, ini_pos, i + 1);
+	ft_strlcpy(new_stash, ini_pos, (i + 1));
 	free(fd_stash);
 	return (new_stash);
+}
+
+char	*get_line(char *fd_stash)
+{
+	size_t		i;
+	char		*line;
+
+	i = 0;
+	if (!fd_stash[i])
+		return (NULL);
+	while (fd_stash[i] && fd_stash[i] != '\n')
+		i++;
+	if (fd_stash[i] == '\n')
+		i++;
+	line = ft_calloc((i + 1), sizeof(char));
+	if (!line)
+		return (NULL);
+	ft_strlcpy(line, fd_stash, (i + 1));
+	return (line);
 }
 
 char	*read_fd(int fd, char *fd_stash)

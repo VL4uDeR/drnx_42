@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 03:00:31 by darsalga          #+#    #+#             */
-/*   Updated: 2024/07/27 03:45:01 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/07/27 04:35:59 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,22 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*p;
 	size_t	total;
+	size_t	i;
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
+	i = 0;
 	total = (nmemb * size);
 	if ((total / nmemb) != size)
 		return (NULL);
 	p = malloc(total);
 	if (!p)
 		return (NULL);
-	ft_bzero(p, total);
+	while (i < total)
+	{
+		((char*)p)[i] = 0;
+		i++;
+	}
 	return (p);
 }
 
@@ -58,6 +64,27 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (dst);
 }
 
+size_t	ft_strlcpy(char *dst, char *src, size_t size)
+{
+	size_t	i;
+	size_t	len;
+
+	i = 0;
+	len = 0;
+	while (src[len])
+		len++;
+	if (size > 0)
+	{
+		while (src[i] && i < (size - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (len);
+}
+
 char	*ft_strchr(char *str, int c)
 {
 	int	i;
@@ -74,20 +101,6 @@ char	*ft_strchr(char *str, int c)
 	if (str[i] == (char)c)
 		return ((char *)&str[i]);
 	return (0);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-	char	*p;
-
-	i = '\0';
-	p = (char *)s;
-	while (i < n)
-	{
-		p[i] = 0;
-		i++;
-	}
 }
 
 size_t	ft_strlen(const char *s)
