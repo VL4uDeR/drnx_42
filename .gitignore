@@ -9,7 +9,6 @@
 *.orig
 
 # compilation files
-
 *.o
 *.a
 *.out
@@ -23,7 +22,12 @@
 Thumbs.db
 
 # +temp files
+*.vscode
 *.log
 *.cache
 *.old
 *.backup
+
+#testfiles
+
+.*Test*
