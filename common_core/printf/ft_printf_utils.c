@@ -6,11 +6,10 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 01:07:38 by darsalga          #+#    #+#             */
-/*   Updated: 2024/08/02 02:04:30 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:17:47 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include <unistd.h>
 
 int	ft_putchar(int c)
@@ -18,16 +17,16 @@ int	ft_putchar(int c)
 	return (write(1, &c, 1));
 }
 
-int	ft_putstr(char *s)
+int	ft_putstr(char *str)
 {
 	int	i;
 
-	if (!s)
-		return (0);
+	if (!str)
+		return (ft_putstr("(null)"));
 	i = 0;
-	while (s[i])
+	while (str[i])
 	{
-		ft_putchar(s[i]);
+		ft_putchar(str[i]);
 		i++;
 	}
 	return (i);
@@ -45,27 +44,27 @@ int	ft_putnbr(int nb)
 		n += ft_putchar('-');
 		nb *= -1;
 	}
-	if (nb / 10)
+	if (nb > 9)
 	{
-		n += ft_putnbr(nb / 10, fd);
-		n += ft_putnbr(nb % 10, fd);
+		n += ft_putnbr(nb / 10);
+		n += ft_putnbr(nb % 10);
 	}
 	else
-		n += ft_putchar_fd(n + '0', fd);
+		n += ft_putchar(nb + '0');
 	return (n);
 }
 
-int ft_putunbr(unsigned int nb)
+int	ft_putunbr(unsigned int nb)
 {
- unsigned int n;
+	int	n;
 
- n = 0;
- if (nb > 9)
- {
-    n += ft_putunbr(nb / 10);
-    n += ft_putunbr(nb % 10);
- }
- else
-    n += ft_putchar(nb + '0');
- return (n);
+	n = 0;
+	if (nb > 9)
+	{
+		n += ft_putunbr(nb / 10);
+		n += ft_putunbr(nb % 10);
+	}
+	else
+		n += ft_putchar(nb + '0');
+	return (n);
 }
