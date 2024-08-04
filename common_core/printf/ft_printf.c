@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 01:54:06 by darsalga          #+#    #+#             */
-/*   Updated: 2024/08/04 05:17:59 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/08/05 00:52:41 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ int	ft_check(va_list args, char c)
 		n = ft_putunbr(va_arg(args, unsigned int));
 	else if (c == '%')
 		return (ft_putchar('%'));
-	else
-		return (0);
 	return (n);
 }
 

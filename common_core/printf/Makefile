@@ -17,24 +17,15 @@ $(NAME): $(OBJS)
 	@echo	"\n"
 	@echo	"(•̀ᴗ•́)و $(NAME) generado!"
 
-%.o: %.c
+%.o: %.c ft_printf.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-#bonus: .bonus
-
-#.bonus:	$(OBJS_BONUS)
-#	@echo	"(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ Compilando _bonus, espere..."
-#	@ar $(ARFLAGS) $(NAME) $(OBJS_BONUS)
-#	@echo	"\n"
-#	@touch .bonus
-#	@echo	"(•̀ᴗ•́)و _bonus generados!"
-
 clean:
-	@$(RM) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(OBJS)
 	@echo	"¯\_(ツ)_/¯ Objects removidos!"
 
 fclean: clean
-	@$(RM) $(NAME) .bonus
+	@$(RM) $(NAME)
 	@echo	"(╯°□°）╯︵ ┻━┻ $(NAME) removido!"
 
 re: fclean all
