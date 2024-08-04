@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 00:56:52 by darsalga          #+#    #+#             */
-/*   Updated: 2024/08/03 01:38:06 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/08/04 05:08:41 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	ft_putunbr(unsigned int nb);
 int	ft_puthex_lo(unsigned int nb);
 int	ft_puthex_up(unsigned int nb);
 int	ft_putadress(unsigned long nb);
+int	ft_print_pointer(unsigned long long ptr);
 
 #endif

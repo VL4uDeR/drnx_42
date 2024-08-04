@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 01:54:06 by darsalga          #+#    #+#             */
-/*   Updated: 2024/08/03 22:48:04 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/08/04 05:17:59 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,13 @@ int	ft_check(va_list args, char c)
 	else if (c == 'X')
 		n = ft_puthex_up(va_arg(args, unsigned int));
 	else if (c == 'p')
-	{
-		n = ft_putstr("0x");
-		n += ft_putadress(va_arg(args, unsigned long long));
-	}
+		n = ft_print_pointer(va_arg(args, unsigned long long));
 	else if (c == 'u')
 		n = ft_putunbr(va_arg(args, unsigned int));
 	else if (c == '%')
 		return (ft_putchar('%'));
+	else
+		return (0);
 	return (n);
 }
 

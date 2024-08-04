@@ -6,7 +6,7 @@
 /*   By: darsalga <darsalga@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 00:35:19 by darsalga          #+#    #+#             */
-/*   Updated: 2024/08/03 01:29:25 by darsalga         ###   ########.fr       */
+/*   Updated: 2024/08/04 05:12:00 by darsalga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,17 @@ int	ft_putadress(unsigned long nb)
 	}
 	else
 		n += ft_putchar(base[nb % 16]);
+	return (n);
+}
+
+int	ft_print_pointer(unsigned long long ptr)
+{
+	int	n;
+
+	n = 0;
+	if (!ptr)
+		return (ft_putstr("(nil)"));
+	n = ft_putstr("0x");
+	n += ft_putadress(ptr);
 	return (n);
 }
